@@ -1,0 +1,6 @@
+<h4>通过@Input绑定,父组件值传给子组件:</h4>
+<app-child-input-component [childInputData]="appInputData"></app-child-input-component>
+
+<h4>通过setter截听输入值的变化:</h4>
+一天的的工作：
+<app-child-set-component *ngFor="let work of appSetterData" [childSetter]="work"></app-child-set-component>
