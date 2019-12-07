@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LoginUserInfoService } from '../service/login-user-info.service';
+import { UserInfoService } from '../service/user-info.service';
 import { User } from '../User';
 
 @Component({
@@ -9,11 +9,11 @@ import { User } from '../User';
   styleUrls: ['./injection-demo.component.css']
 })
 export class InjectionDemoComponent implements OnInit {
-  constructor(private loginUserInfoService: LoginUserInfoService) {}
+  constructor(private userInfoService: UserInfoService) {}
 
   public user: User;
 
   ngOnInit() {
-    this.user = this.loginUserInfoService.getUser();
+    this.user = this.userInfoService.getUser();
   }
 }

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
+import { User } from '../User';
+
 @Injectable({
   providedIn: 'root'
 })
 export abstract class UserInfoService {
-  abstract getUser(): void;
+  abstract getUser(): User;
   constructor() {}
 }
