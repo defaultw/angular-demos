@@ -4,3 +4,8 @@
 <h4>通过setter截听输入值的变化:</h4>
 一天的的工作：
 <app-child-set-component *ngFor="let work of appSetterData" [childSetter]="work"></app-child-set-component>
+
+<h4>通过ngChanges()截听属性值的变化</h4>
+<input type="text" [(ngModel)]="appInputValue">
+<button (click)="resetInputValue();">clearLog</button>
+<app-child-ngonchange-component [inputValue]="appInputValue"></app-child-ngonchange-component>
