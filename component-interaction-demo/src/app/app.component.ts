@@ -3,6 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import {
     ChildNgonchangeComponentComponent
 } from './child-ngonchange-component/child-ngonchange-component.component';
+import {
+    ChildViewchildComponentComponent
+} from './child-viewchild-component/child-viewchild-component.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +22,9 @@ export class AppComponent {
    */
   @ViewChild(ChildNgonchangeComponentComponent, { static: false })
   onChangeChild: ChildNgonchangeComponentComponent;
+
+  @ViewChild(ChildViewchildComponentComponent, { static: false })
+  private viewChild: ChildViewchildComponentComponent;
 
   title = 'component-interaction-demo';
 
@@ -45,5 +51,9 @@ export class AppComponent {
     if (isClick) {
       this.outputEvent = '成功';
     }
+  }
+
+  viewChildClick() {
+    this.viewChild.click();
   }
 }

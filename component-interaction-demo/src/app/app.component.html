@@ -1,15 +1,27 @@
-<h4>通过@Input绑定,父组件值传给子组件:</h4>
+<h4>1.通过@Input绑定,父组件值传给子组件:</h4>
 <app-child-input-component [childInputData]="appInputData"></app-child-input-component>
 
-<h4>通过setter截听输入值的变化:</h4>
+<h4>2.通过setter截听输入值的变化:</h4>
 一天的的工作：
 <app-child-set-component *ngFor="let work of appSetterData" [childSetter]="work"></app-child-set-component>
 
-<h4>通过ngChanges()截听属性值的变化</h4>
+<h4>3.通过ngChanges()截听属性值的变化</h4>
 <input type="text" [(ngModel)]="appInputValue">
 <button (click)="resetInputValue();">clearLog</button>
 <app-child-ngonchange-component [inputValue]="appInputValue"></app-child-ngonchange-component>
 
-<h4>通过 @Output 向父组件弹射事件</h4>
+<h4>4.通过 @Output 向父组件弹射事件</h4>
 {{outputEvent}}
 <app-child-output-component (onclick)="appOnClick($event)"></app-child-output-component>
+
+<h4>5.通过本地变量传参</h4>
+<app-child-value-component #childData></app-child-value-component>
+子组件中变量：{{childData.localValue}}
+<button (click)="childData.localFunction()">点击修改子组件中变量值</button>
+
+<h4>6.通过@ViewChild() 调用子组件方法</h4>
+子组件中变量：{{data.viewChildValue}}
+<app-child-viewchild-component #data></app-child-viewchild-component>
+<button (click)="viewChildClick()">点击修改子组件中变量值</button>
+
+<h4>7.通过 服务实现 子父组件通讯</h4>
