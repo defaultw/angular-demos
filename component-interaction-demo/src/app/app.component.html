@@ -9,3 +9,7 @@
 <input type="text" [(ngModel)]="appInputValue">
 <button (click)="resetInputValue();">clearLog</button>
 <app-child-ngonchange-component [inputValue]="appInputValue"></app-child-ngonchange-component>
+
+<h4>通过 @Output 向父组件弹射事件</h4>
+{{outputEvent}}
+<app-child-output-component (onclick)="appOnClick($event)"></app-child-output-component>

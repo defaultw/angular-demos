@@ -31,10 +31,19 @@ export class AppComponent {
   // 通过 ngOnChanges()截听属性值的变化
   public appInputValue: string;
 
+  // 通过 @Output 弹射事件到父组件
+  public outputEvent: string;
+
   resetInputValue() {
     this.appInputValue = 'init';
     if (this.onChangeChild) {
       this.onChangeChild.clearLog();
+    }
+  }
+
+  appOnClick(isClick: boolean) {
+    if (isClick) {
+      this.outputEvent = '成功';
     }
   }
 }
