@@ -22,6 +22,7 @@ import {
 import {
     ChildViewchildComponentComponent
 } from './child-viewchild-component/child-viewchild-component.component';
+import { TService } from './service/tService';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {
     ChildServiceComponentComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [TService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

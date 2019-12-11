@@ -6,6 +6,7 @@ import {
 import {
     ChildViewchildComponentComponent
 } from './child-viewchild-component/child-viewchild-component.component';
+import { TService } from './service/tService';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private tservice: TService) {}
+
   /**
    * 属性装饰器，用于配置一个视图查询。
    * 变更检测器会在视图的 DOM 中查找能匹配上该选择器的第一个元素或指令.
@@ -40,6 +43,9 @@ export class AppComponent {
   // 通过 @Output 弹射事件到父组件
   public outputEvent: string;
 
+  // 通过service获取子组件的值
+  public serviceChildDate: string;
+
   resetInputValue() {
     this.appInputValue = 'init';
     if (this.onChangeChild) {
@@ -55,5 +61,10 @@ export class AppComponent {
 
   viewChildClick() {
     this.viewChild.click();
+  }
+
+  // 通过service获取子组件中的
+  getChildData() {
+    this.serviceChildDate = this.tservice.getData();
   }
 }

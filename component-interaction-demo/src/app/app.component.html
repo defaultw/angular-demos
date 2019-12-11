@@ -25,3 +25,6 @@
 <button (click)="viewChildClick()">点击修改子组件中变量值</button>
 
 <h4>7.通过 服务实现 子父组件通讯</h4>
+父组件接收子组件设置的值：{{serviceChildDate}} <br />
+<app-child-service-component></app-child-service-component>
+<button (click)="getChildData()">获取子组件中值</button>
